@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f6f9;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.sidebar {
+    width: 230px;
+    height: calc(100vh - 56px);
+    background: #1b5e20;
+    padding-top: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #2e7d32;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.card-box {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.btn-success {
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+}

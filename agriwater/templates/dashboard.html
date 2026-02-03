@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card-box mb-4">
+    <h4>🌱 Smart Irrigation Prediction</h4>
+
+    <form method="post" class="mt-3">
+        {% csrf_token %}
+        <input class="form-control mb-3" type="number" step="any" name="moisture" placeholder="Soil Moisture (%)" required>
+        <input class="form-control mb-3" type="number" step="any" name="temperature" placeholder="Temperature (°C)" required>
+        <input class="form-control mb-3" type="number" step="any" name="humidity" placeholder="Humidity (%)" required>
+        <button class="btn btn-success w-100">Predict</button>
+    </form>
+</div>
+
+{% if prediction %}
+<div class="card-box mb-4">
+    <h5>Prediction Result</h5>
+    <p class="fw-bold text-success">{{ prediction }}</p>
+</div>
+{% endif %}
+
+<div class="card-box">
+    <h5>Recent Predictions</h5>
+    <table class="table">
+        <tr>
+            <th>Moisture</th>
+            <th>Temp</th>
+            <th>Humidity</th>
+            <th>Result</th>
+        </tr>
+        {% for r in records %}
+        <tr>
+            <td>{{ r.moisture }}</td>
+            <td>{{ r.temperature }}</td>
+            <td>{{ r.humidity }}</td>
+            <td>{{ r.prediction }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
